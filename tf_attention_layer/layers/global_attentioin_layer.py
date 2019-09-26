@@ -14,6 +14,11 @@ class GlobalAttentionLayer(Layer):
 
         super().__init__(**kwargs)
 
+        # setup mask supporting flag, used by base class (the Layer)
+        # Note: this call must be behind the call of base class's __init__,
+        # because base class set supports_masking to false unconditionally
+        self.supports_masking = True
+
     def get_config(self):
         config = {}
 
@@ -49,6 +54,8 @@ class GlobalAttentionLayer(Layer):
         super(GlobalAttentionLayer, self).build(input_shape)
 
     def call(self, inputs, mask=None, **kwargs):
+        # TODO: use mask
+
         if isinstance(inputs, list):
             inputs = inputs[0]
 
