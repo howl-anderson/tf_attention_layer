@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="tf_attention_layer",
-    version="0.1.1",
+    version="0.1.2",
     packages=find_packages(include=["tf_attention_layer", "tf_attention_layer.*"]),
     url="https://github.com/howl-anderson/tf_attention_layer",
     license="MIT",
